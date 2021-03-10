@@ -4,6 +4,7 @@
     <string name="lastName">Nazwisko:</string>
     <string name="grades">Oceny:</string>
     <string name="button">Oceny</string>
-    <string name="nameInput" />
-    <string name="lastNameInput" />
+    <string name="nameInput">Imię</string>
+    <string name="lastNameInput">Nazwisko</string>
+    <string name="gradesInput">Wpisz liczbę ocen (5-15)</string>
 </resources>
