@@ -45,11 +45,19 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(MainActivity.this, R.string.gradesWarning, Toast.LENGTH_SHORT).show();
                     grades.setError("Pole oceny nie może być puste");
                 }
+                else if (!hasFocus && !inNumbersSet(grades)) {
+                    Toast.makeText(MainActivity.this, R.string.gradesNumberWarning, Toast.LENGTH_SHORT).show();
+                    grades.setError("Podaj liczbę ocen w przedziale od 5 do 15");
+                }
             }
         });
     }
 
     public boolean isEmpty(EditText editText) {
         return editText.getText().toString().trim().length() == 0;
+    }
+
+    public boolean inNumbersSet(EditText editText) {
+        return Integer.parseInt(editText.getText().toString()) >= 5 && Integer.parseInt(editText.getText().toString()) <= 15;
     }
 }
