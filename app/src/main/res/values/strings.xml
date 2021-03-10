@@ -4,4 +4,6 @@
     <string name="lastName">Nazwisko:</string>
     <string name="grades">Oceny:</string>
     <string name="button">Oceny</string>
+    <string name="nameInput" />
+    <string name="lastNameInput" />
 </resources>

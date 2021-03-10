@@ -20,13 +20,13 @@
             android:text="@string/name" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName5"
+            android:id="@+id/nameInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="Name" />
+            android:text="@string/nameInput" />
     </LinearLayout>
 
     <LinearLayout
@@ -42,13 +42,13 @@
             android:text="@string/lastName" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName4"
+            android:id="@+id/lastNameInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="Name" />
+            android:text="@string/lastNameInput" />
     </LinearLayout>
 
     <LinearLayout
@@ -64,7 +64,7 @@
             android:text="@string/grades" />
 
         <EditText
-            android:id="@+id/editTextNumber"
+            android:id="@+id/gradesInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
