@@ -7,4 +7,7 @@
     <string name="nameInput">Imię</string>
     <string name="lastNameInput">Nazwisko</string>
     <string name="gradesInput">Wpisz liczbę ocen (5-15)</string>
+    <string name="nameWarning">Imię nie może być puste</string>
+    <string name="lastNameWarning">Nazwisko nie może być puste</string>
+    <string name="gradesWarning">Pole oceny nie może być puste</string>
 </resources>
