@@ -23,33 +23,27 @@ public class MainActivity extends AppCompatActivity {
 
         name.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             public void onFocusChange(View v, boolean hasFocus) {
-                if (!hasFocus) {
-                    if (isEmpty(name)) {
-                        Toast.makeText(MainActivity.this, R.string.nameWarning, Toast.LENGTH_SHORT).show();
-                        name.setError("Imię nie może być puste");
-                    }
+                if (!hasFocus && isEmpty(name)) {
+                    Toast.makeText(MainActivity.this, R.string.nameWarning, Toast.LENGTH_SHORT).show();
+                    name.setError("Imię nie może być puste");
                 }
             }
         });
 
         lastName.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             public void onFocusChange(View v, boolean hasFocus) {
-                if (!hasFocus) {
-                    if (isEmpty(lastName)) {
-                        Toast.makeText(MainActivity.this, R.string.lastNameWarning, Toast.LENGTH_SHORT).show();
-                        lastName.setError("Nazwisko nie może być puste");
-                    }
+                if (!hasFocus && isEmpty(lastName)) {
+                    Toast.makeText(MainActivity.this, R.string.lastNameWarning, Toast.LENGTH_SHORT).show();
+                    lastName.setError("Nazwisko nie może być puste");
                 }
             }
         });
 
         grades.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             public void onFocusChange(View v, boolean hasFocus) {
-                if (!hasFocus) {
-                    if (isEmpty(grades)) {
-                        Toast.makeText(MainActivity.this, R.string.gradesWarning, Toast.LENGTH_SHORT).show();
-                        grades.setError("Pole oceny nie może być puste");
-                    }
+                if (!hasFocus && isEmpty(grades)) {
+                    Toast.makeText(MainActivity.this, R.string.gradesWarning, Toast.LENGTH_SHORT).show();
+                    grades.setError("Pole oceny nie może być puste");
                 }
             }
         });
