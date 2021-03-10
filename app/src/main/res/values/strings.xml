@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Mean Calculator</string>
+    <string name="name">Imię:</string>
+    <string name="lastName">Nazwisko:</string>
+    <string name="grades">Oceny:</string>
+    <string name="button">Oceny</string>
 </resources>
