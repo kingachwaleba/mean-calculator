@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -24,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
             public void onFocusChange(View v, boolean hasFocus) {
                 if (!hasFocus) {
                     if (isEmpty(name)) {
+                        Toast.makeText(MainActivity.this, "Imię nie może być puste", Toast.LENGTH_SHORT).show();
                         name.setError("Imię nie może być puste");
                     }
                 }
@@ -34,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
             public void onFocusChange(View v, boolean hasFocus) {
                 if (!hasFocus) {
                     if (isEmpty(lastName)) {
+                        Toast.makeText(MainActivity.this, "Nazwisko nie może być puste", Toast.LENGTH_SHORT).show();
                         lastName.setError("Nazwisko nie może być puste");
                     }
                 }
@@ -44,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
             public void onFocusChange(View v, boolean hasFocus) {
                 if (!hasFocus) {
                     if (isEmpty(grades)) {
+                        Toast.makeText(MainActivity.this, "Pole oceny nie może być puste", Toast.LENGTH_SHORT).show();
                         grades.setError("Pole oceny nie może być puste");
                     }
                 }
