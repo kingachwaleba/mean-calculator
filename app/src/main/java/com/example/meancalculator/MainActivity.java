@@ -30,8 +30,6 @@ public class MainActivity extends AppCompatActivity {
                         Toast.makeText(MainActivity.this, R.string.nameWarning, Toast.LENGTH_SHORT).show();
                         name.setError("Imię nie może być puste");
                     }
-//                    else if (!isEmpty(lastName) && !isEmpty(grades) && inNumbersSet(grades))
-//                        button.setVisibility(Button.VISIBLE);
                 }
             }
         });
@@ -43,8 +41,6 @@ public class MainActivity extends AppCompatActivity {
                         Toast.makeText(MainActivity.this, R.string.lastNameWarning, Toast.LENGTH_SHORT).show();
                         lastName.setError("Nazwisko nie może być puste");
                     }
-//                    else if (!isEmpty(grades) && inNumbersSet(grades))
-//                        button.setVisibility(Button.VISIBLE);
                 }
             }
         });
@@ -55,69 +51,54 @@ public class MainActivity extends AppCompatActivity {
                     if (isEmpty(grades)) {
                         Toast.makeText(MainActivity.this, R.string.gradesWarning, Toast.LENGTH_SHORT).show();
                         grades.setError("Pole oceny nie może być puste");
-                    }
-                    else if (!inNumbersSet(grades)) {
+                    } else if (!inNumbersSet(grades)) {
                         Toast.makeText(MainActivity.this, R.string.gradesNumberWarning, Toast.LENGTH_SHORT).show();
                         grades.setError("Podaj liczbę ocen w przedziale od 5 do 15");
                     }
-//                    else if (!isEmpty(name) && !isEmpty(lastName) && !isEmpty(grades) && inNumbersSet(grades) )
-//                        button.setVisibility(Button.VISIBLE);
                 }
             }
         });
 
         name.addTextChangedListener(new TextWatcher() {
             @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 if (!isEmpty(lastName) && !isEmpty(grades) && inNumbersSet(grades))
-                        button.setVisibility(Button.VISIBLE);
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-
-            }
-        });
-
-        lastName.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                if (!isEmpty(grades) && inNumbersSet(grades))
-                        button.setVisibility(Button.VISIBLE);
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-
-            }
-        });
-
-        grades.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                if (!isEmpty(name) && !isEmpty(lastName) && !isEmpty(grades) && inNumbersSet(grades) )
                     button.setVisibility(Button.VISIBLE);
             }
 
             @Override
-            public void afterTextChanged(Editable s) {
+            public void afterTextChanged(Editable s) {}
+        });
 
+        lastName.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if (!isEmpty(grades) && inNumbersSet(grades))
+                    button.setVisibility(Button.VISIBLE);
             }
+
+            @Override
+            public void afterTextChanged(Editable s) {}
+        });
+
+        grades.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if (!isEmpty(name) && !isEmpty(lastName) && !isEmpty(grades) && inNumbersSet(grades))
+                    button.setVisibility(Button.VISIBLE);
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {}
         });
     }
 
