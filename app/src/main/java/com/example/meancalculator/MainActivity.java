@@ -111,6 +111,11 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onSaveInstanceState(@NonNull Bundle outState) {
+        // getText() returns CharSequence not String
+        outState.putString("", name.getText().toString());
+        outState.putString("", lastName.getText().toString());
+        outState.putInt("", Integer.parseInt(grades.getText().toString()));
+
         super.onSaveInstanceState(outState);
     }
 }
