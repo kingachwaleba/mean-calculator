@@ -13,16 +13,18 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
+    private final EditText name = findViewById(R.id.nameInput);
+    private final EditText lastName = findViewById(R.id.lastNameInput);
+    private final EditText grades = findViewById(R.id.gradesInput);
+
+    Button button = findViewById(R.id.button);
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        EditText name = findViewById(R.id.nameInput);
-        EditText lastName = findViewById(R.id.lastNameInput);
-        EditText grades = findViewById(R.id.gradesInput);
 
-        Button button = findViewById(R.id.button);
 
         name.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             public void onFocusChange(View v, boolean hasFocus) {
