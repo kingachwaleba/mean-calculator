@@ -1,5 +1,6 @@
 package com.example.meancalculator;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -104,5 +105,10 @@ public class MainActivity extends AppCompatActivity {
 
     public boolean inNumbersSet(EditText editText) {
         return Integer.parseInt(editText.getText().toString()) >= 5 && Integer.parseInt(editText.getText().toString()) <= 15;
+    }
+
+    @Override
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
     }
 }
