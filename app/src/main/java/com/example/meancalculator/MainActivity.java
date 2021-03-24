@@ -132,7 +132,7 @@ public class MainActivity extends AppCompatActivity {
 
         outState.putString("name", name.getText().toString());
         outState.putString("lastName", lastName.getText().toString());
-        outState.putInt("grades", Integer.parseInt(grades.getText().toString()));
+        outState.putString("grades", grades.getText().toString());
 
         super.onSaveInstanceState(outState);
     }
