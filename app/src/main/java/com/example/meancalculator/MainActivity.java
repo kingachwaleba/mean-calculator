@@ -103,6 +103,16 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void afterTextChanged(Editable s) {}
         });
+
+        if (savedInstanceState != null ) {
+            String savedName = savedInstanceState.getString("name");
+            String savedLastName = savedInstanceState.getString("");
+            String savedGradesName = savedInstanceState.getString("grades");
+
+            name.setText(savedName);
+            lastName.setText(savedLastName);
+            grades.setText(savedGradesName);
+        }
     }
 
     public boolean isEmpty(EditText editText) {
