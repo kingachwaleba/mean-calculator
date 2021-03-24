@@ -13,18 +13,22 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    private final EditText name = findViewById(R.id.nameInput);
-    private final EditText lastName = findViewById(R.id.lastNameInput);
-    private final EditText grades = findViewById(R.id.gradesInput);
+    private EditText name;
+    private EditText lastName;
+    private EditText grades;
 
-    Button button = findViewById(R.id.button);
+    Button button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        name = findViewById(R.id.nameInput);
+        lastName = findViewById(R.id.lastNameInput);
+        grades = findViewById(R.id.gradesInput);
 
+        button = findViewById(R.id.button);
 
         name.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             public void onFocusChange(View v, boolean hasFocus) {
@@ -112,9 +116,13 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onSaveInstanceState(@NonNull Bundle outState) {
         // getText() returns CharSequence not String
-        outState.putString("", name.getText().toString());
-        outState.putString("", lastName.getText().toString());
-        outState.putInt("", Integer.parseInt(grades.getText().toString()));
+        name = findViewById(R.id.nameInput);
+        lastName = findViewById(R.id.lastNameInput);
+        grades = findViewById(R.id.gradesInput);
+
+        outState.putString("name", name.getText().toString());
+        outState.putString("lastName", lastName.getText().toString());
+        outState.putInt("grades", Integer.parseInt(grades.getText().toString()));
 
         super.onSaveInstanceState(outState);
     }
