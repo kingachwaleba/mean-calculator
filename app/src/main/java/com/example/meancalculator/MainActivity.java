@@ -106,7 +106,7 @@ public class MainActivity extends AppCompatActivity {
 
         if (savedInstanceState != null ) {
             String savedName = savedInstanceState.getString("name");
-            String savedLastName = savedInstanceState.getString("");
+            String savedLastName = savedInstanceState.getString("lastName");
             String savedGradesName = savedInstanceState.getString("grades");
 
             name.setText(savedName);
