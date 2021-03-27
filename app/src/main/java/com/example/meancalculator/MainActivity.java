@@ -11,6 +11,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import static com.example.meancalculator.R.string.gradesNumberWarning;
+import static com.example.meancalculator.R.string.gradesWarning;
+import static com.example.meancalculator.R.string.lastNameWarning;
+import static com.example.meancalculator.R.string.nameWarning;
+
 public class MainActivity extends AppCompatActivity {
 
     private EditText name;
@@ -33,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         name.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             public void onFocusChange(View v, boolean hasFocus) {
                 if (!hasFocus && isEmpty(name)) {
-                    Toast.makeText(MainActivity.this, R.string.nameWarning, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, nameWarning, Toast.LENGTH_SHORT).show();
                     name.setError("Imię nie może być puste");
                 }
             }
@@ -42,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
         lastName.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             public void onFocusChange(View v, boolean hasFocus) {
                 if (!hasFocus && isEmpty(lastName)) {
-                    Toast.makeText(MainActivity.this, R.string.lastNameWarning, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, lastNameWarning, Toast.LENGTH_SHORT).show();
                     lastName.setError("Nazwisko nie może być puste");
                 }
             }
@@ -52,10 +57,10 @@ public class MainActivity extends AppCompatActivity {
             public void onFocusChange(View v, boolean hasFocus) {
                 if (!hasFocus) {
                     if (isEmpty(grades)) {
-                        Toast.makeText(MainActivity.this, R.string.gradesWarning, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(MainActivity.this, gradesWarning, Toast.LENGTH_SHORT).show();
                         grades.setError("Pole oceny nie może być puste");
                     } else if (!inNumbersSet(grades)) {
-                        Toast.makeText(MainActivity.this, R.string.gradesNumberWarning, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(MainActivity.this, gradesNumberWarning, Toast.LENGTH_SHORT).show();
                         grades.setError("Podaj liczbę ocen w przedziale od 5 do 15");
                     }
                 }
