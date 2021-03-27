@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
             public void onFocusChange(View v, boolean hasFocus) {
                 if (!hasFocus && isEmpty(name)) {
                     Toast.makeText(MainActivity.this, nameWarning, Toast.LENGTH_SHORT).show();
-                    name.setError("Imię nie może być puste");
+                    name.setError(getString(nameWarning));
                 }
             }
         });
@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
             public void onFocusChange(View v, boolean hasFocus) {
                 if (!hasFocus && isEmpty(lastName)) {
                     Toast.makeText(MainActivity.this, lastNameWarning, Toast.LENGTH_SHORT).show();
-                    lastName.setError("Nazwisko nie może być puste");
+                    lastName.setError(getString(lastNameWarning));
                 }
             }
         });
@@ -58,10 +58,10 @@ public class MainActivity extends AppCompatActivity {
                 if (!hasFocus) {
                     if (isEmpty(grades)) {
                         Toast.makeText(MainActivity.this, gradesWarning, Toast.LENGTH_SHORT).show();
-                        grades.setError("Pole oceny nie może być puste");
+                        grades.setError(getString(gradesWarning));
                     } else if (!inNumbersSet(grades)) {
                         Toast.makeText(MainActivity.this, gradesNumberWarning, Toast.LENGTH_SHORT).show();
-                        grades.setError("Podaj liczbę ocen w przedziale od 5 do 15");
+                        grades.setError(getString(gradesNumberWarning));
                     }
                 }
             }
