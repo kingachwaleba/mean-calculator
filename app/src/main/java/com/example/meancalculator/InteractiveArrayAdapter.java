@@ -42,7 +42,7 @@ public class InteractiveArrayAdapter extends RecyclerView.Adapter<InteractiveArr
         return gradesActivityList.size();
     }
 
-    public class GradesViewHolder extends RecyclerView.ViewHolder {
+    public class GradesViewHolder extends RecyclerView.ViewHolder implements RadioGroup.OnCheckedChangeListener {
 
         private EditText editText;
         private RadioGroup radioGroup;
@@ -50,6 +50,11 @@ public class InteractiveArrayAdapter extends RecyclerView.Adapter<InteractiveArr
 
         public GradesViewHolder(@NonNull View itemView) {
             super(itemView);
+        }
+
+        @Override
+        public void onCheckedChanged(RadioGroup group, int checkedId) {
+
         }
     }
 }
