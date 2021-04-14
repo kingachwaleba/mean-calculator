@@ -11,4 +11,9 @@
     <string name="lastNameWarning">Nazwisko nie może być puste</string>
     <string name="gradesWarning">Pole oceny nie może być puste</string>
     <string name="gradesNumberWarning">Podaj liczbę ocen w przedziale od 5 do 15</string>
+    <string name="gradeName">TextView</string>
+    <string name="twoGrade">2</string>
+    <string name="threeGrade">3</string>
+    <string name="fourGrade">4</string>
+    <string name="fiveGrade">5</string>
 </resources>

@@ -13,7 +13,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:padding="10dp"
-        android:text="TextView"
+        android:text="@string/gradeName"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -31,7 +31,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="10dp"
-            android:text="2"
+            android:text="@string/twoGrade"
             android:textSize="20sp" />
 
         <RadioButton
@@ -39,7 +39,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="10dp"
-            android:text="3"
+            android:text="@string/threeGrade"
             android:textSize="20sp" />
 
         <RadioButton
@@ -47,7 +47,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="10dp"
-            android:text="4"
+            android:text="@string/fourGrade"
             android:textSize="20sp" />
 
         <RadioButton
@@ -55,7 +55,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="10dp"
-            android:text="5"
+            android:text="@string/fiveGrade"
             android:textSize="20sp" />
 
     </RadioGroup>
