@@ -3,6 +3,9 @@ package com.example.meancalculator;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -40,6 +43,11 @@ public class InteractiveArrayAdapter extends RecyclerView.Adapter<InteractiveArr
     }
 
     public class GradesViewHolder extends RecyclerView.ViewHolder {
+
+        private EditText editText;
+        private RadioGroup radioGroup;
+        private RadioButton radioButton;
+
         public GradesViewHolder(@NonNull View itemView) {
             super(itemView);
         }
