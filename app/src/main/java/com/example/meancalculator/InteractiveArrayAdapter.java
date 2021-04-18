@@ -38,7 +38,30 @@ public class InteractiveArrayAdapter extends RecyclerView.Adapter<InteractiveArr
     // Populate a row, stored in a holder, with data for the specified row
     @Override
     public void onBindViewHolder(@NonNull GradesViewHolder holder, int position) {
+        // Get the correct grade from the data source
         GradeModel grade = gradesActivityList.get(position);
+
+        // Connect radio buttons group with a list row
+        holder.radioGroup.setTag(grade);
+
+        // Set the name of the subject
+        holder.textView.setText(grade.getName());
+
+        // Select a radio button
+        switch (position) {
+            case 2:
+                holder.radioGroup.check(R.id.radioButton6);
+                break;
+            case 3:
+                holder.radioGroup.check(R.id.radioButton7);
+                break;
+            case 4:
+                holder.radioGroup.check(R.id.radioButton8);
+                break;
+            case 5:
+                holder.radioGroup.check(R.id.radioButton10);
+                break;
+        }
     }
 
     // Return the number of items of the list
