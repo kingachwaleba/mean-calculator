@@ -1,5 +1,6 @@
 package com.example.meancalculator;
 
+import android.app.Activity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,9 +18,10 @@ public class InteractiveArrayAdapter extends RecyclerView.Adapter<InteractiveArr
     private List<GradeModel> gradesActivityList;
     private LayoutInflater layoutInflater;
 
-    public InteractiveArrayAdapter(List<GradeModel> gradesActivityList, LayoutInflater layoutInflater) {
+    // Save the reference to the data source and create the LayoutInflater object
+    public InteractiveArrayAdapter(List<GradeModel> gradesActivityList, Activity activity) {
         this.gradesActivityList = gradesActivityList;
-        this.layoutInflater = layoutInflater;
+        this.layoutInflater = activity.getLayoutInflater();
     }
 
     // Create the main layout element and create a holder for the given row
