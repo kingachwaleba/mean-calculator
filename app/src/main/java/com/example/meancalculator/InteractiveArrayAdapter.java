@@ -14,10 +14,10 @@ import java.util.List;
 
 public class InteractiveArrayAdapter extends RecyclerView.Adapter<InteractiveArrayAdapter.GradesViewHolder> {
 
-    private List<GradesActivity> gradesActivityList;
+    private List<GradeModel> gradesActivityList;
     private LayoutInflater layoutInflater;
 
-    public InteractiveArrayAdapter(List<GradesActivity> gradesActivityList, LayoutInflater layoutInflater) {
+    public InteractiveArrayAdapter(List<GradeModel> gradesActivityList, LayoutInflater layoutInflater) {
         this.gradesActivityList = gradesActivityList;
         this.layoutInflater = layoutInflater;
     }
@@ -33,7 +33,7 @@ public class InteractiveArrayAdapter extends RecyclerView.Adapter<InteractiveArr
     // Populate a row, stored in a holder, with data for the specified row
     @Override
     public void onBindViewHolder(@NonNull GradesViewHolder holder, int position) {
-        GradesActivity grade = gradesActivityList.get(position);
+        GradeModel grade = gradesActivityList.get(position);
     }
 
     // Return the number of items of the list
