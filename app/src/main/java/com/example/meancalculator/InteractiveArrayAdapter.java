@@ -1,5 +1,6 @@
 package com.example.meancalculator;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -29,7 +30,7 @@ public class InteractiveArrayAdapter extends RecyclerView.Adapter<InteractiveArr
     @Override
     public GradesViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         // Created a row layout based on XML
-        View line = layoutInflater.inflate(R.layout.list_line, null);
+        @SuppressLint("InflateParams") View line = layoutInflater.inflate(R.layout.list_line, null);
         // Return new holder object
         return new GradesViewHolder(line);
     }
