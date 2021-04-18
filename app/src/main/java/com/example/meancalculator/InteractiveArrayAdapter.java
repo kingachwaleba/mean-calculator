@@ -50,16 +50,16 @@ public class InteractiveArrayAdapter extends RecyclerView.Adapter<InteractiveArr
         // Select a radio button
         switch (position) {
             case 2:
-                holder.radioGroup.check(R.id.radioButton6);
+                holder.radioGroup.check(R.id.twoButton);
                 break;
             case 3:
-                holder.radioGroup.check(R.id.radioButton7);
+                holder.radioGroup.check(R.id.threeButton);
                 break;
             case 4:
-                holder.radioGroup.check(R.id.radioButton8);
+                holder.radioGroup.check(R.id.fourButton);
                 break;
             case 5:
-                holder.radioGroup.check(R.id.radioButton10);
+                holder.radioGroup.check(R.id.fiveButton);
                 break;
         }
     }

@@ -27,7 +27,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <RadioButton
-            android:id="@+id/radioButton6"
+            android:id="@+id/twoButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="10dp"
@@ -35,7 +35,7 @@
             android:textSize="20sp" />
 
         <RadioButton
-            android:id="@+id/radioButton7"
+            android:id="@+id/threeButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="10dp"
@@ -43,7 +43,7 @@
             android:textSize="20sp" />
 
         <RadioButton
-            android:id="@+id/radioButton8"
+            android:id="@+id/fourButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="10dp"
@@ -51,7 +51,7 @@
             android:textSize="20sp" />
 
         <RadioButton
-            android:id="@+id/radioButton10"
+            android:id="@+id/fiveButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="10dp"
