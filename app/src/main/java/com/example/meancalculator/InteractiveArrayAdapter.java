@@ -24,11 +24,13 @@ public class InteractiveArrayAdapter extends RecyclerView.Adapter<InteractiveArr
         this.layoutInflater = activity.getLayoutInflater();
     }
 
-    // Create the main layout element and create a holder for the given row
+    // Create the main layout element (a list row) and create a holder for the given row
     @NonNull
     @Override
     public GradesViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        // Created a row layout based on XML
         View line = layoutInflater.inflate(R.layout.list_line, null);
+        // Return new holder object
         return new GradesViewHolder(line);
     }
 
