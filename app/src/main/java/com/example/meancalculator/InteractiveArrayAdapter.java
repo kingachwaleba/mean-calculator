@@ -3,9 +3,9 @@ package com.example.meancalculator;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -44,7 +44,7 @@ public class InteractiveArrayAdapter extends RecyclerView.Adapter<InteractiveArr
 
     public class GradesViewHolder extends RecyclerView.ViewHolder implements RadioGroup.OnCheckedChangeListener {
 
-        private EditText editText;
+        private TextView textView;
         private RadioGroup radioGroup;
         private RadioButton radioButton;
 
