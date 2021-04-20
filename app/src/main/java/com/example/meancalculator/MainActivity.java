@@ -36,6 +36,8 @@ public class MainActivity extends AppCompatActivity {
 
         button = findViewById(R.id.button);
 
+        button.setOnClickListener(v -> gradesActivity());
+
         name.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             public void onFocusChange(View v, boolean hasFocus) {
                 if (!hasFocus && isEmpty(name)) {
