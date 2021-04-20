@@ -3,6 +3,7 @@ package com.example.meancalculator;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -140,5 +141,14 @@ public class MainActivity extends AppCompatActivity {
         outState.putString("grades", grades.getText().toString());
 
         super.onSaveInstanceState(outState);
+    }
+
+    protected void onActivityResult(int taskCode, int exitCode, Intent result) {
+        super.onActivityResult(taskCode, exitCode, result);
+
+        if (taskCode == RESULT_OK) {
+            Bundle bundle = result.getExtras();
+            double mean = bundle.getDouble("srednia");
+        }
     }
 }
