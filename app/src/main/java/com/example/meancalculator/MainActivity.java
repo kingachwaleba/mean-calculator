@@ -151,4 +151,11 @@ public class MainActivity extends AppCompatActivity {
             double mean = bundle.getDouble("srednia");
         }
     }
+
+    // Invoke one activity into another
+    public void gradesActivity() {
+        Intent intent = new Intent(MainActivity.this, GradesActivity.class);
+        intent.putExtra("liczbaOcen",Integer.valueOf(Integer.parseInt(grades.getText().toString())));
+        startActivityForResult(intent, 0);
+    }
 }
