@@ -82,6 +82,11 @@ public class InteractiveArrayAdapter extends RecyclerView.Adapter<InteractiveArr
             // Read the reference to the row elements
             this.textView = itemView.findViewById(R.id.gradeName);
             this.radioGroup = itemView.findViewById(R.id.radioGroup);
+
+            radioGroup.setOnCheckedChangeListener((group, checkedId) -> {
+                // Read an object from the radio button group
+                GradeModel element = (GradeModel) group.getTag();
+            });
         }
 
         @Override
