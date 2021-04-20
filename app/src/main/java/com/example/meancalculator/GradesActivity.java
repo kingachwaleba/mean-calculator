@@ -1,6 +1,7 @@
 package com.example.meancalculator;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
@@ -42,5 +43,8 @@ public class GradesActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.gradesList);
         // Connect the grades list with data
         recyclerView.setAdapter(interactiveArrayAdapter);
+
+        // Set the layout that set the elements in RecyclerView
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
 }
