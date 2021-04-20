@@ -21,7 +21,7 @@ public class GradesActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_grades);
+        setContentView(R.layout.grades_layout);
 
         gradeModelArrayList = new ArrayList<>();
 
