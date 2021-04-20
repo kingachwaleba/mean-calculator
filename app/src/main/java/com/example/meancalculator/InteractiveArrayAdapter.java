@@ -86,6 +86,10 @@ public class InteractiveArrayAdapter extends RecyclerView.Adapter<InteractiveArr
             radioGroup.setOnCheckedChangeListener((group, checkedId) -> {
                 // Read an object from the radio button group
                 GradeModel element = (GradeModel) group.getTag();
+                // Save the changed grade
+                radioButton = itemView.findViewById(group.getCheckedRadioButtonId());
+                element.setValue(Integer.parseInt(radioButton.getText().toString()));
+                gradesActivityList.set(element.getId(), element);
             });
         }
 
