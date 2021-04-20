@@ -16,10 +16,7 @@ public class GradesActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     ArrayList<GradeModel> gradeModelArrayList;
 
-    public GradesActivity(Button button, RecyclerView recyclerView) {
-        this.button = button;
-        this.recyclerView = recyclerView;
-    }
+    public GradesActivity() {}
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
