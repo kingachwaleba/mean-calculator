@@ -39,7 +39,7 @@ public class GradesActivity extends AppCompatActivity {
 
         // Create an adapter
         InteractiveArrayAdapter interactiveArrayAdapter = new InteractiveArrayAdapter(gradeModelArrayList, this);
-        // Find the reference to the RecycleView object
+        // Find the reference to the RecyclerView object
         recyclerView = findViewById(R.id.gradesList);
         // Connect the grades list with data
         recyclerView.setAdapter(interactiveArrayAdapter);
