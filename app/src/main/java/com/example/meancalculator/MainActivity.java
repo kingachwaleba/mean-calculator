@@ -125,10 +125,13 @@ public class MainActivity extends AppCompatActivity {
             String savedName = savedInstanceState.getString("name");
             String savedLastName = savedInstanceState.getString("lastName");
             String savedGradesName = savedInstanceState.getString("grades");
+            String savedMean = savedInstanceState.getString("meanField");
 
             name.setText(savedName);
             lastName.setText(savedLastName);
             grades.setText(savedGradesName);
+            meanField.setVisibility(View.VISIBLE);
+            meanField.setText(savedMean);
         }
     }
 
@@ -146,10 +149,12 @@ public class MainActivity extends AppCompatActivity {
         name = findViewById(R.id.nameInput);
         lastName = findViewById(R.id.lastNameInput);
         grades = findViewById(R.id.gradesInput);
+        meanField = findViewById(R.id.meanField);
 
         outState.putString("name", name.getText().toString());
         outState.putString("lastName", lastName.getText().toString());
         outState.putString("grades", grades.getText().toString());
+        outState.putString("meanField", meanField.getText().toString());
 
         super.onSaveInstanceState(outState);
     }
