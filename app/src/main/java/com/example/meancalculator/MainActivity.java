@@ -10,6 +10,7 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import static com.example.meancalculator.R.string.gradesNumberWarning;
@@ -23,6 +24,8 @@ public class MainActivity extends AppCompatActivity {
     private EditText lastName;
     private EditText grades;
 
+    private TextView meanField;
+
     Button button;
 
     @Override
@@ -33,6 +36,8 @@ public class MainActivity extends AppCompatActivity {
         name = findViewById(R.id.nameInput);
         lastName = findViewById(R.id.lastNameInput);
         grades = findViewById(R.id.gradesInput);
+
+        meanField = findViewById(R.id.meanField);
 
         button = findViewById(R.id.button);
 
@@ -151,6 +156,13 @@ public class MainActivity extends AppCompatActivity {
         if (taskCode == RESULT_OK) {
             Bundle bundle = result.getExtras();
             double mean = bundle.getDouble("srednia");
+
+            String text = "Twoja średnia to ";
+            text = text.concat(String.valueOf(mean));
+
+            meanField = findViewById(R.id.meanField);
+            meanField.setText(text);
+            meanField.setVisibility(View.VISIBLE);
         }
     }
 
