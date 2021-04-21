@@ -1,5 +1,6 @@
 package com.example.meancalculator;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -30,6 +31,7 @@ public class GradesActivity extends AppCompatActivity {
         Bundle bundle = getIntent().getExtras();
         final int gradesNumber = bundle.getInt("gradesInput");
 
+        GradeModel.setCount(0);
         for (int i = 0; i < gradesNumber; i++) {
             GradeModel grade = new GradeModel(gradesList[i]);
             gradeModelArrayList.add(grade);
@@ -41,7 +43,6 @@ public class GradesActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.gradesList);
         // Connect the grades list with data
         recyclerView.setAdapter(interactiveArrayAdapter);
-
         // Set the layout that set the elements in RecyclerView
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
@@ -55,6 +56,31 @@ public class GradesActivity extends AppCompatActivity {
             setResult(RESULT_OK, intent);
             finish();
         });
+
+        if (savedInstanceState != null ) {
+            // Get a saved array with chosen grades
+            int[] savedGrades = savedInstanceState.getIntArray("gradesValue");
+            for (int i = 0; i < savedGrades.length; i++) {
+                // Set chosen grades
+                gradeModelArrayList.get(i).setValue(savedGrades[i]);
+            }
+        }
+    }
+
+    @Override
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
+        // Create a new array the size of a grade ArrayList
+        int[] allGrades = new int[gradeModelArrayList.size()];
+
+        for (int i = 0; i < allGrades.length; i++) {
+            // Add next grades to the array
+            allGrades[i] = gradeModelArrayList.get(i).getValue();
+        }
+
+        // Save an array with all chosen grades
+        outState.putIntArray("gradesValue", allGrades);
+
+        super.onSaveInstanceState(outState);
     }
 
     public double calculateMean() {
