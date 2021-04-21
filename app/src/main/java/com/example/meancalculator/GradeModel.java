@@ -33,4 +33,8 @@ public class GradeModel {
     public void setName(String name) {
         this.name = name;
     }
+
+    public static void setCount(int count) {
+        GradeModel.count = count;
+    }
 }
