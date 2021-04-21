@@ -7,11 +7,11 @@
 
     <TextView
         android:id="@+id/grades"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="171dp"
+        android:layout_height="55dp"
         android:padding="10dp"
-        android:textSize="20sp"
         android:text="@string/grades"
+        android:textSize="20sp"
         app:layout_constraintEnd_toStartOf="@+id/gradesInput"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -50,7 +50,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/gradesInput" />
+        app:layout_constraintTop_toBottomOf="@+id/meanField" />
 
     <EditText
         android:id="@+id/nameInput"
@@ -93,5 +93,14 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/grades"
         app:layout_constraintTop_toBottomOf="@+id/lastNameInput" />
+
+    <TextView
+        android:id="@+id/meanField"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/grades" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
