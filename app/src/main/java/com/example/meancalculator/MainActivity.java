@@ -141,20 +141,7 @@ public class MainActivity extends AppCompatActivity {
             if (savedCalculatedMean) {
                 button = findViewById(R.id.button);
 
-                if (mean >= 3.0) {
-                    button.setText(successMessage);
-                    button.setOnClickListener(v -> {
-                        Toast.makeText(MainActivity.this, successExitMessage, Toast.LENGTH_SHORT).show();
-                        finish();
-                    });
-                }
-                else {
-                    button.setText(failureMessage);
-                    button.setOnClickListener(v -> {
-                        Toast.makeText(MainActivity.this, failureExitMessage, Toast.LENGTH_SHORT).show();
-                        finish();
-                    });
-                }
+                showMessage();
             }
         }
     }
@@ -202,20 +189,7 @@ public class MainActivity extends AppCompatActivity {
 
             calculatedMean = true;
 
-            if (mean >= 3.0) {
-                button.setText(successMessage);
-                button.setOnClickListener(v -> {
-                    Toast.makeText(MainActivity.this, successExitMessage, Toast.LENGTH_SHORT).show();
-                    finish();
-                });
-            }
-            else {
-                button.setText(failureMessage);
-                button.setOnClickListener(v -> {
-                    Toast.makeText(MainActivity.this, failureExitMessage, Toast.LENGTH_SHORT).show();
-                    finish();
-                });
-            }
+            showMessage();
         }
     }
 
@@ -224,5 +198,22 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(MainActivity.this, GradesActivity.class);
         intent.putExtra("gradesInput", Integer.valueOf(Integer.parseInt(grades.getText().toString())));
         startActivityForResult(intent, 0);
+    }
+
+    public void showMessage() {
+        if (mean >= 3.0) {
+            button.setText(successMessage);
+            button.setOnClickListener(v -> {
+                Toast.makeText(MainActivity.this, successExitMessage, Toast.LENGTH_SHORT).show();
+                finish();
+            });
+        }
+        else {
+            button.setText(failureMessage);
+            button.setOnClickListener(v -> {
+                Toast.makeText(MainActivity.this, failureExitMessage, Toast.LENGTH_SHORT).show();
+                finish();
+            });
+        }
     }
 }
