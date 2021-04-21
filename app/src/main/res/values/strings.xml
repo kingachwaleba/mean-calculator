@@ -21,6 +21,7 @@
     <string name="failureMessage">Tym razem nie poszło :(</string>
     <string name="successExitMessage">Gratulacje! Otrzymujesz zaliczenie!</string>
     <string name="failureExitMessage">Wysyłam podanie o zaliczenie warunkowe</string>
+    <string name="meanMessage">\"Twoja średnia to \"</string>
     <string-array name="gradeTable">
         <item>Fiz.</item>
         <item>Mat.</item>

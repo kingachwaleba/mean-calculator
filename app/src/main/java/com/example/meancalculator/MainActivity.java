@@ -21,6 +21,7 @@ import static com.example.meancalculator.R.string.successMessage;
 import static com.example.meancalculator.R.string.successExitMessage;
 import static com.example.meancalculator.R.string.failureMessage;
 import static com.example.meancalculator.R.string.failureExitMessage;
+import static com.example.meancalculator.R.string.meanMessage;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -178,7 +179,7 @@ public class MainActivity extends AppCompatActivity {
             Bundle bundle = result.getExtras();
             mean = bundle.getDouble("srednia");
 
-            String text = "Twoja średnia to ";
+            String text = getString(meanMessage);
             text = text.concat(String.valueOf(mean));
 
             meanField = findViewById(R.id.meanField);
