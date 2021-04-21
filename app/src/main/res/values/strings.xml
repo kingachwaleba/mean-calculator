@@ -16,7 +16,7 @@
     <string name="threeGrade">3</string>
     <string name="fourGrade">4</string>
     <string name="fiveGrade">5</string>
-    <string name="countButton">Button</string>
+    <string name="countButton">Oblicz średnią</string>
     <string-array name="gradeTable">
         <item>Fiz.</item>
         <item>Mat.</item>
