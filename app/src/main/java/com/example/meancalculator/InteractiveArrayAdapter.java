@@ -48,7 +48,7 @@ public class InteractiveArrayAdapter extends RecyclerView.Adapter<InteractiveArr
         holder.textView.setText(grade.getName());
 
         // Select a radio button
-        switch (position) {
+        switch (gradesActivityList.get(position).getValue()) {
             case 2:
                 holder.radioGroup.check(R.id.twoButton);
                 break;
