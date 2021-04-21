@@ -202,6 +202,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void showMessage() {
+        name.setEnabled(false);
+        lastName.setEnabled(false);
+        grades.setEnabled(false);
+
         if (mean >= 3.0) {
             button.setText(successMessage);
             button.setOnClickListener(v -> {
