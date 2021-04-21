@@ -11,6 +11,7 @@ public class GradeModel {
         this.name = name;
         this.id = count;
         count++;
+        this.value = 2;
     }
 
     public String getName() {
