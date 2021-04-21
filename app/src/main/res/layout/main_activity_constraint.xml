@@ -64,7 +64,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/name"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:importantForAutofill="no" />
 
     <EditText
         android:id="@+id/lastNameInput"
@@ -78,7 +79,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/lastName"
-        app:layout_constraintTop_toBottomOf="@+id/nameInput" />
+        app:layout_constraintTop_toBottomOf="@+id/nameInput"
+        android:importantForAutofill="no" />
 
     <EditText
         android:id="@+id/gradesInput"
@@ -92,7 +94,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/grades"
-        app:layout_constraintTop_toBottomOf="@+id/lastNameInput" />
+        app:layout_constraintTop_toBottomOf="@+id/lastNameInput"
+        android:importantForAutofill="no" />
 
     <TextView
         android:id="@+id/meanField"
