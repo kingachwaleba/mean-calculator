@@ -17,6 +17,10 @@
     <string name="fourGrade">4</string>
     <string name="fiveGrade">5</string>
     <string name="countButton">Oblicz średnią</string>
+    <string name="successMessage">Super :)</string>
+    <string name="failureMessage">Tym razem nie poszło :(</string>
+    <string name="successExitMessage">Gratulacje! Otrzymujesz zaliczenie!</string>
+    <string name="failureExitMessage">Wysyłam podanie o zaliczenie warunkowe</string>
     <string-array name="gradeTable">
         <item>Fiz.</item>
         <item>Mat.</item>

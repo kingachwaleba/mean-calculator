@@ -17,6 +17,10 @@ import static com.example.meancalculator.R.string.gradesNumberWarning;
 import static com.example.meancalculator.R.string.gradesWarning;
 import static com.example.meancalculator.R.string.lastNameWarning;
 import static com.example.meancalculator.R.string.nameWarning;
+import static com.example.meancalculator.R.string.successMessage;
+import static com.example.meancalculator.R.string.successExitMessage;
+import static com.example.meancalculator.R.string.failureMessage;
+import static com.example.meancalculator.R.string.failureExitMessage;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -153,7 +157,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onActivityResult(int taskCode, int exitCode, Intent result) {
         super.onActivityResult(taskCode, exitCode, result);
 
-        if (taskCode == RESULT_OK) {
+        if (exitCode == RESULT_OK) {
             Bundle bundle = result.getExtras();
             double mean = bundle.getDouble("srednia");
 
@@ -163,6 +167,23 @@ public class MainActivity extends AppCompatActivity {
             meanField = findViewById(R.id.meanField);
             meanField.setText(text);
             meanField.setVisibility(View.VISIBLE);
+
+            button = findViewById(R.id.button);
+
+            if (mean >= 3.0) {
+                button.setText(successMessage);
+                button.setOnClickListener(v -> {
+                    Toast.makeText(MainActivity.this, successExitMessage, Toast.LENGTH_SHORT).show();
+                    finish();
+                });
+            }
+            else {
+                button.setText(failureMessage);
+                button.setOnClickListener(v -> {
+                    Toast.makeText(MainActivity.this, failureExitMessage, Toast.LENGTH_SHORT).show();
+                    finish();
+                });
+            }
         }
     }
 
