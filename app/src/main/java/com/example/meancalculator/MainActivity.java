@@ -190,7 +190,7 @@ public class MainActivity extends AppCompatActivity {
             // They have binary digits
             Double truncatedDouble = BigDecimal.valueOf(mean).setScale(2, RoundingMode.HALF_UP).doubleValue();
 
-            text = text.concat(String.valueOf(truncatedDouble));
+            text = text.concat(" ").concat(String.valueOf(truncatedDouble));
 
             meanField = findViewById(R.id.meanField);
             meanField.setText(text);
