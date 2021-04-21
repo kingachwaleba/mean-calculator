@@ -13,6 +13,9 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+
 import static com.example.meancalculator.R.string.gradesNumberWarning;
 import static com.example.meancalculator.R.string.gradesWarning;
 import static com.example.meancalculator.R.string.lastNameWarning;
@@ -180,7 +183,14 @@ public class MainActivity extends AppCompatActivity {
             mean = bundle.getDouble("srednia");
 
             String text = getString(meanMessage);
-            text = text.concat(String.valueOf(mean));
+
+            // Set precision of mean using BigDecimal
+            // Precision cannot be set using Double
+            // Because floating-point values don't have decimal digits
+            // They have binary digits
+            Double truncatedDouble = BigDecimal.valueOf(mean).setScale(2, RoundingMode.HALF_UP).doubleValue();
+
+            text = text.concat(String.valueOf(truncatedDouble));
 
             meanField = findViewById(R.id.meanField);
             meanField.setText(text);
