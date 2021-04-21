@@ -30,6 +30,10 @@ public class MainActivity extends AppCompatActivity {
 
     private TextView meanField;
 
+    private Boolean calculatedMean = false;
+
+    private Double mean = 0.0;
+
     Button button;
 
     @Override
@@ -126,12 +130,32 @@ public class MainActivity extends AppCompatActivity {
             String savedLastName = savedInstanceState.getString("lastName");
             String savedGradesName = savedInstanceState.getString("grades");
             String savedMean = savedInstanceState.getString("meanField");
+            boolean savedCalculatedMean = savedInstanceState.getBoolean("calculatedMean");
 
             name.setText(savedName);
             lastName.setText(savedLastName);
             grades.setText(savedGradesName);
             meanField.setVisibility(View.VISIBLE);
             meanField.setText(savedMean);
+
+            if (savedCalculatedMean) {
+                button = findViewById(R.id.button);
+
+                if (mean >= 3.0) {
+                    button.setText(successMessage);
+                    button.setOnClickListener(v -> {
+                        Toast.makeText(MainActivity.this, successExitMessage, Toast.LENGTH_SHORT).show();
+                        finish();
+                    });
+                }
+                else {
+                    button.setText(failureMessage);
+                    button.setOnClickListener(v -> {
+                        Toast.makeText(MainActivity.this, failureExitMessage, Toast.LENGTH_SHORT).show();
+                        finish();
+                    });
+                }
+            }
         }
     }
 
@@ -155,6 +179,7 @@ public class MainActivity extends AppCompatActivity {
         outState.putString("lastName", lastName.getText().toString());
         outState.putString("grades", grades.getText().toString());
         outState.putString("meanField", meanField.getText().toString());
+        outState.putBoolean("calculatedMean", calculatedMean);
 
         super.onSaveInstanceState(outState);
     }
@@ -164,7 +189,7 @@ public class MainActivity extends AppCompatActivity {
 
         if (exitCode == RESULT_OK) {
             Bundle bundle = result.getExtras();
-            double mean = bundle.getDouble("srednia");
+            mean = bundle.getDouble("srednia");
 
             String text = "Twoja średnia to ";
             text = text.concat(String.valueOf(mean));
@@ -174,6 +199,8 @@ public class MainActivity extends AppCompatActivity {
             meanField.setVisibility(View.VISIBLE);
 
             button = findViewById(R.id.button);
+
+            calculatedMean = true;
 
             if (mean >= 3.0) {
                 button.setText(successMessage);
