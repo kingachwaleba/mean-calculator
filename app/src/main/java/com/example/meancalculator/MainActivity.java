@@ -34,8 +34,6 @@ public class MainActivity extends AppCompatActivity {
 
     private TextView meanField;
 
-    private Boolean calculatedMean = false;
-
     private Double mean = 0.0;
 
     Button button;
@@ -134,7 +132,7 @@ public class MainActivity extends AppCompatActivity {
             String savedLastName = savedInstanceState.getString("lastName");
             String savedGradesName = savedInstanceState.getString("grades");
             String savedMean = savedInstanceState.getString("meanField");
-            boolean savedCalculatedMean = savedInstanceState.getBoolean("calculatedMean");
+            mean = savedInstanceState.getDouble("calculatedMean");
 
             name.setText(savedName);
             lastName.setText(savedLastName);
@@ -142,11 +140,7 @@ public class MainActivity extends AppCompatActivity {
             meanField.setVisibility(View.VISIBLE);
             meanField.setText(savedMean);
 
-            if (savedCalculatedMean) {
-                button = findViewById(R.id.button);
-
-                showMessage();
-            }
+            showMessage();
         }
     }
 
@@ -170,7 +164,7 @@ public class MainActivity extends AppCompatActivity {
         outState.putString("lastName", lastName.getText().toString());
         outState.putString("grades", grades.getText().toString());
         outState.putString("meanField", meanField.getText().toString());
-        outState.putBoolean("calculatedMean", calculatedMean);
+        outState.putDouble("calculatedMean", mean);
 
         super.onSaveInstanceState(outState);
     }
@@ -196,10 +190,6 @@ public class MainActivity extends AppCompatActivity {
             meanField.setText(text);
             meanField.setVisibility(View.VISIBLE);
 
-            button = findViewById(R.id.button);
-
-            calculatedMean = true;
-
             showMessage();
         }
     }
@@ -216,6 +206,8 @@ public class MainActivity extends AppCompatActivity {
         lastName.setEnabled(false);
         grades.setEnabled(false);
 
+        button = findViewById(R.id.button);
+
         if (mean >= 3.0) {
             button.setText(successMessage);
             button.setOnClickListener(v -> {
@@ -223,7 +215,7 @@ public class MainActivity extends AppCompatActivity {
                 finish();
             });
         }
-        else {
+        else if (mean >= 2.0) {
             button.setText(failureMessage);
             button.setOnClickListener(v -> {
                 Toast.makeText(MainActivity.this, failureExitMessage, Toast.LENGTH_SHORT).show();
