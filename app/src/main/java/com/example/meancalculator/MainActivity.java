@@ -202,13 +202,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void showMessage() {
-        name.setEnabled(false);
-        lastName.setEnabled(false);
-        grades.setEnabled(false);
-
         button = findViewById(R.id.button);
 
         if (mean >= 3.0) {
+            name.setEnabled(false);
+            lastName.setEnabled(false);
+            grades.setEnabled(false);
+
             button.setText(successMessage);
             button.setOnClickListener(v -> {
                 Toast.makeText(MainActivity.this, successExitMessage, Toast.LENGTH_SHORT).show();
@@ -216,6 +216,10 @@ public class MainActivity extends AppCompatActivity {
             });
         }
         else if (mean >= 2.0) {
+            name.setEnabled(false);
+            lastName.setEnabled(false);
+            grades.setEnabled(false);
+
             button.setText(failureMessage);
             button.setOnClickListener(v -> {
                 Toast.makeText(MainActivity.this, failureExitMessage, Toast.LENGTH_SHORT).show();
