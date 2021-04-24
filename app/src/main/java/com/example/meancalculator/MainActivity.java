@@ -58,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
                 if (!hasFocus && isEmpty(name)) {
                     Toast.makeText(MainActivity.this, nameWarning, Toast.LENGTH_SHORT).show();
                     name.setError(getString(nameWarning));
+                    button.setVisibility(Button.INVISIBLE);
                 }
             }
         });
@@ -67,6 +68,7 @@ public class MainActivity extends AppCompatActivity {
                 if (!hasFocus && isEmpty(lastName)) {
                     Toast.makeText(MainActivity.this, lastNameWarning, Toast.LENGTH_SHORT).show();
                     lastName.setError(getString(lastNameWarning));
+                    button.setVisibility(Button.INVISIBLE);
                 }
             }
         });
@@ -77,9 +79,11 @@ public class MainActivity extends AppCompatActivity {
                     if (isEmpty(grades)) {
                         Toast.makeText(MainActivity.this, gradesWarning, Toast.LENGTH_SHORT).show();
                         grades.setError(getString(gradesWarning));
+                        button.setVisibility(Button.INVISIBLE);
                     } else if (!inNumbersSet(grades)) {
                         Toast.makeText(MainActivity.this, gradesNumberWarning, Toast.LENGTH_SHORT).show();
                         grades.setError(getString(gradesNumberWarning));
+                        button.setVisibility(Button.INVISIBLE);
                     }
                 }
             }
