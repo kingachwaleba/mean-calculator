@@ -7,7 +7,7 @@
 
     <TextView
         android:id="@+id/grades"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="10dp"
         android:text="@string/grades"
@@ -19,11 +19,11 @@
 
     <TextView
         android:id="@+id/lastName"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="10dp"
-        android:textSize="20sp"
         android:text="@string/lastName"
+        android:textSize="20sp"
         app:layout_constraintEnd_toStartOf="@+id/lastNameInput"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -31,7 +31,7 @@
 
     <TextView
         android:id="@+id/name"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="10dp"
         android:text="@string/name"
@@ -54,48 +54,48 @@
 
     <EditText
         android:id="@+id/nameInput"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:hint="@string/nameInput"
+        android:importantForAutofill="no"
         android:inputType="textPersonName"
         android:padding="10dp"
         android:textSize="20sp"
-        android:hint="@string/nameInput"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/name"
-        app:layout_constraintTop_toTopOf="parent"
-        android:importantForAutofill="no" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/lastNameInput"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:hint="@string/lastNameInput"
+        android:importantForAutofill="no"
         android:inputType="textPersonName"
         android:padding="10dp"
         android:textSize="20sp"
-        android:hint="@string/lastNameInput"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/lastName"
-        app:layout_constraintTop_toBottomOf="@+id/nameInput"
-        android:importantForAutofill="no" />
+        app:layout_constraintTop_toBottomOf="@+id/nameInput" />
 
     <EditText
         android:id="@+id/gradesInput"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:hint="@string/gradesInput"
+        android:importantForAutofill="no"
         android:inputType="number"
         android:padding="10dp"
-        android:hint="@string/gradesInput"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/grades"
-        app:layout_constraintTop_toBottomOf="@+id/lastNameInput"
-        android:importantForAutofill="no" />
+        app:layout_constraintTop_toBottomOf="@+id/lastNameInput" />
 
     <TextView
         android:id="@+id/meanField"
